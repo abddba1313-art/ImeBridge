@@ -34,7 +34,7 @@ GitHub 上的翻译悬浮工具几乎都要求你**先装好 Ollama/LM Studio �
 
 ## 快速开始（用发布产物）
 
-1. 到 [Releases](../../releases) 下载 `ImeBridge-x.x-win64.zip`，解压到任意文件夹
+1. 到 [Releases](../../releases) 下载 `ImeBridge-12.0-win64.zip`（exe 本体 MD5 与 360 白名单条目一致），解压到任意文件夹
 2. 把 `Hy-MT2-1.8B-Q8_0.gguf`（或 Hy-MT3）放进同一文件夹
    —— 模型来自 [Tencent Hunyuan HY-MT](https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF)（国内可用 modelscope 镜像）
 3. 双击 `start_translation_service.bat`：会拉起 1236 端口的 llama-server，随后自动启动托盘翻译桥
