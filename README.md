@@ -37,7 +37,7 @@ GitHub 上的翻译悬浮工具几乎都要求你**先装好 Ollama/LM Studio �
 **方式 A · 安装包（推荐，中文）**
 1. 到 [Releases](../../releases) 下载 `ImeBridge-12.0-setup.exe`（约 71 MB），双击安装到
    `D:\llama-b11541-bin-win-cpu-x64`（路径可改）——一次装齐：llama.cpp b11541 CPU 运行时
-   + `翻译start_translation_service.bat` + `输入翻译桥 12.0.exe`（安装时自动校验 MD5 与 360 白名单一致）
+   + `翻译start_translation_service.bat` + `输入翻译桥 12.0.exe`（安装时自动校验 MD5 与 360 白名单一致；新机器自动预置服务端口 1236，已有配置不动）
 2. 下载 `Hy-MT3-1.8B-Q8_0.gguf` 放进该目录
    （ModelScope：[Tencent-Hunyuan/Hy-MT3-1.8B-GGUF](https://modelscope.cn/models/Tencent-Hunyuan/Hy-MT3-1.8B-GGUF)，或 HF tencent/Hy-MT3-1.8B-GGUF）
 3. 双击 `翻译start_translation_service.bat`，模型选 `[2]`（Q8_0）——服务就绪后自动拉起托盘翻译桥

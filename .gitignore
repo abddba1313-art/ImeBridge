@@ -13,3 +13,4 @@ bridge.log
 extract/
 rebuilt/
 *_orig.py
+installer/payload.zip
