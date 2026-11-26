@@ -1,0 +1,4 @@
+# Keep Windows artifacts on CRLF
+*.bat text eol=crlf
+*.py text eol=lf
+*.md text eol=lf
