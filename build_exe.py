@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """PyInstaller 单文件打包：python build_exe.py [版本后缀]
 
-产物 dist/ImeBridge.exe（无控制台窗口）。国内网络建议：
+产物 dist/输入翻译桥 12.0.exe（无控制台窗口）。国内网络建议：
   pip install -r requirements-build.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 """
 import subprocess
@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / 'src'
 ENTRY = SRC / 'main.py'
-NAME = 'ImeBridge'
+NAME = '输入翻译桥 12.0'
 
 args = [
     sys.executable, '-m', 'PyInstaller',
@@ -21,11 +21,18 @@ args = [
     # 运行时按名字找模块（from popup import Popup），src 整体加 paths 即可；
     # comtypes 生成缓存目录在只读介质会报错，main 里已兜底，这里再显式收编
     '--hidden-import', 'uiautomation',
+    '--hidden-import', 'word_bridge',
     '--hidden-import', 'win32clipboard',
     '--hidden-import', 'win32gui',
     '--hidden-import', 'win32con',
     '--hidden-import', 'comtypes.stream',
     '--exclude-module', 'tkinter.test',
+    '--exclude-module', 'cryptography',
+    '--exclude-module', 'psutil',
+    '--exclude-module', 'threadpoolctl',
+    '--exclude-module', 'typing_extensions',
+    '--exclude-module', 'ctypes._aix',
+    '--exclude-module', 'ctypes.macholib',
     str(ENTRY),
 ]
 

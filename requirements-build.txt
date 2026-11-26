@@ -1,9 +1,9 @@
 # 运行 + 打包依赖（Python 3.12，tkinter 随官方安装器自带）
-requests
-pystray
-comtypes
-pywin32
-pillow
-numpy
-uiautomation
-pyinstaller
+requests==2.34.2
+pystray==0.19.5
+comtypes==1.4.17
+pywin32==312
+pillow==13.0.0
+numpy==2.5.4
+uiautomation==2.0.29
+pyinstaller==6.22.3

@@ -290,6 +290,7 @@ class SettingsPanel:
             t.insert('1.0', str(value or ''))
 
     def get_values(self) -> dict:
+        """表单当前值。列表字段返回 list，多行文本从 Text 取，其余返回字符串/布尔。"""
         out = {}
         for _t, fs in SECTIONS:
             for key, _label, kind in fs:
@@ -377,6 +378,7 @@ class SettingsPanel:
             '%d 把热键全部按配置生效。' % len(tuple(KEY_FIELD_BY_HID_REV)))
 
     def _apply_draft_to_cfg(self) -> Config:
+        """把表单值算成一份新配置（校验失败抛 ValueError）。"""
         vals = self.get_values()
         new = Config()
         new.__dict__.update(self.cfg.__dict__)
@@ -552,6 +554,7 @@ def os_startfile(path):
 
 
 def build_settings_window(root, cfg, hooks=None) -> tk.Toplevel:
+    """只建窗、返回 Toplevel；主循环由调用方负责（root 已在 mainloop 里）。"""
     top = tk.Toplevel(root)
     top.title('输入翻译桥 · 设置')
     top.geometry('620x620')

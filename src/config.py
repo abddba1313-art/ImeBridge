@@ -78,7 +78,7 @@ def merge_new_languages(langs) -> list:
 
 @dataclass
 class Config:
-    api_base: str = 'http://127.0.0.1:1236/v1'
+    api_base: str = 'http://127.0.0.1:1235/v1'
     model: str = ''
     model_hint: str = 'mt,hy,hunyuan'
     api_key: str = ''

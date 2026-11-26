@@ -10,3 +10,6 @@ venv/
 *.bak*
 config.json
 bridge.log
+extract/
+rebuilt/
+*_orig.py
