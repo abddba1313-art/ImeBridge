@@ -34,11 +34,18 @@ GitHub 上的翻译悬浮工具几乎都要求你**先装好 Ollama/LM Studio �
 
 ## 快速开始（用发布产物）
 
-1. 到 [Releases](../../releases) 下载 `ImeBridge-12.0-win64.zip`（exe 本体 MD5 与 360 白名单条目一致），解压到任意文件夹
-2. 把 `Hy-MT2-1.8B-Q8_0.gguf`（或 Hy-MT3）放进同一文件夹
-   —— 模型来自 [Tencent Hunyuan HY-MT](https://huggingface.co/tencent/Hy-MT2-1.8B-GGUF)（国内可用 modelscope 镜像）
-3. 双击 `start_translation_service.bat`：会拉起 1236 端口的 llama-server，随后自动启动托盘翻译桥
+**方式 A · 安装包（推荐，中文）**
+1. 到 [Releases](../../releases) 下载 `ImeBridge-12.0-setup.exe`（约 71 MB），双击安装到
+   `D:\llama-b11541-bin-win-cpu-x64`（路径可改）——一次装齐：llama.cpp b11541 CPU 运行时
+   + `翻译start_translation_service.bat` + `输入翻译桥 12.0.exe`（安装时自动校验 MD5 与 360 白名单一致）
+2. 下载 `Hy-MT3-1.8B-Q8_0.gguf` 放进该目录
+   （ModelScope：[Tencent-Hunyuan/Hy-MT3-1.8B-GGUF](https://modelscope.cn/models/Tencent-Hunyuan/Hy-MT3-1.8B-GGUF)，或 HF tencent/Hy-MT3-1.8B-GGUF）
+3. 双击 `翻译start_translation_service.bat`，模型选 `[2]`（Q8_0）——服务就绪后自动拉起托盘翻译桥
 4. 光标进任意输入框打字。首次启动 SmartScreen 拦截：「更多信息 → 仍要运行」（未做代码签名，见下文）
+
+**方式 B · 绿色压缩包（英文启动器）**
+1. 下载 `ImeBridge-12.0-win64.zip` 解压到任意文件夹，把模型 gguf 放入同一文件夹
+2. 双击 `start_translation_service.bat`（自动取目录内第一个 *.gguf，监听 1236 后启动桥）
 
 默认热键（可改，冲突时自动降级到空闲键并在托盘/设置里告知）：
 
