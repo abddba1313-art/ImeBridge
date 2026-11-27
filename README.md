@@ -43,9 +43,13 @@ GitHub 上的翻译悬浮工具几乎都要求你**先装好 Ollama/LM Studio �
 3. 双击 `翻译start_translation_service.bat`，模型选 `[2]`（Q8_0）——服务就绪后自动拉起托盘翻译桥
 4. 光标进任意输入框打字。首次启动 SmartScreen 拦截：「更多信息 → 仍要运行」（未做代码签名，见下文）
 
-**方式 B · 绿色压缩包（英文启动器）**
-1. 下载 `ImeBridge-12.0-win64.zip` 解压到任意文件夹，把模型 gguf 放入同一文件夹
-2. 双击 `start_translation_service.bat`（选择 Q4_K_M / Q8_0 / Q2_K，监听 1236 后启动 `*12.0.exe`）
+**方式 B · 绿色压缩包（英文启动器，需自备 llama.cpp 运行时）**
+1. 下载 `ImeBridge-12.0-win64.zip` 解压到任意文件夹（内含桥 exe + 英文启动器，**不含** llama 运行时）
+2. 从 [llama.cpp Releases](https://github.com/ggml-org/llama.cpp/releases) 下载 `b11541` 的 `win-cpu-x64` 包，把 `llama-server.exe` 和它的 `*.dll` 拷进同一文件夹
+3. 把模型 gguf 放入同一文件夹
+4. 双击 `start_translation_service.bat`：自动取目录内第一个 `*.gguf`，监听 1236，就绪后拉起桥 exe（缺 llama-server 或模型时会在命令行明确报错）
+
+> 想要一次装齐运行时，用方式 A 的安装包；方式 B 适合想自己控制 llama.cpp 版本的人。
 
 默认热键（可改，冲突时自动降级到空闲键并在托盘/设置里告知）：
 
